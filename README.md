@@ -1,8 +1,21 @@
 # Scriptz — Administração e Automação
 
+<a href="#por-onde-comecar">
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/repository-cover-mobile-dark.svg">
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="assets/repository-cover-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/repository-cover-dark.svg">
+  <img src="assets/repository-cover-light.svg" alt="Scriptz — Fork com contribuições documentadas." width="1240">
+</picture>
+</a>
+
+[Começar](#por-onde-comecar) · [Catálogo](#catalogo) · [Origem e contribuições](CONTRIBUTIONS.md)
+
 Coleção de scripts, adaptações e guias para administração de Linux, Windows, AWS, redes, backups e serviços de infraestrutura.
 
 Este repositório é um **fork de [charles-josiah/scriptz](https://github.com/charles-josiah/scriptz)**. Os créditos dos materiais estão nos arquivos e em [Origem e contribuições](CONTRIBUTIONS.md). A documentação do usuário restrito no Linux identifica uma colaboração entre Charles Josiah e Fabio Ferreira.
+
+<a id="por-onde-comecar"></a>
 
 ## Por onde começar
 
@@ -38,6 +51,8 @@ Alguns materiais são legados e foram escritos para problemas específicos. Comp
 ```
 
 O script solicita a credencial e grava, por padrão, `C:\Temp\Local_Users_Report.csv` e `C:\Temp\Hosts_Triage_Report.csv`. O primeiro contém usuários dos hosts Windows consultados com sucesso; o segundo registra falhas e resultados da triagem.
+
+<a id="catalogo"></a>
 
 ## Catálogo
 
@@ -107,3 +122,7 @@ Ao adicionar ou atualizar um material, descreva:
 - Autor, colaboradores e referência original quando aplicável.
 
 Confira [Origem e contribuições](CONTRIBUTIONS.md) para a atribuição dos materiais desta coleção.
+
+## Mais projetos
+
+[Perfil de Fabio Ferreira](https://github.com/cwbffm) · [OCI Architect Studio](https://github.com/cwbffm/oci-architect-studio) · [Laboratório Terraform OCI](https://github.com/cwbffm/oci-terraform-network)
