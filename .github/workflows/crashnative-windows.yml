@@ -1,0 +1,33 @@
+name: CrashNative Windows CI
+on:
+  push:
+    branches:
+      - feature/crashnative-analysis-v01
+    paths:
+      - 'CrashNative/**'
+      - '.github/workflows/crashnative-windows.yml'
+  pull_request:
+    paths:
+      - 'CrashNative/**'
+      - '.github/workflows/crashnative-windows.yml'
+jobs:
+  test-and-build:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit tests (synthetic data)
+        run: python -m unittest discover -s CrashNative/tests -v
+      - name: Configure Win32 viewer
+        run: cmake -S CrashNative -B CrashNative/build -A x64
+      - name: Build Win32 viewer
+        run: cmake --build CrashNative/build --config Release
+      - name: Publish analyzer executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: CrashNativeInspector-windows-x64
+          path: CrashNative/build/Release/CrashNativeInspector.exe
