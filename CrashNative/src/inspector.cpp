@@ -86,9 +86,9 @@ LRESULT CALLBACK windowProc(HWND window, UINT message, WPARAM wp, LPARAM lp) {
     case WM_CREATE: {
         HINSTANCE instance = reinterpret_cast<LPCREATESTRUCTW>(lp)->hInstance;
         CreateWindowW(L"BUTTON", L"Abrir relatorio", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
-                      12, 12, 160, 34, window, reinterpret_cast<HMENU>(OPEN_REPORT), instance, nullptr);
+                      12, 12, 160, 34, window, reinterpret_cast<HMENU>(static_cast<INT_PTR>(OPEN_REPORT)), instance, nullptr);
         CreateWindowW(L"BUTTON", L"Visualizar tela de carregamento", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
-                      185, 12, 280, 34, window, reinterpret_cast<HMENU>(OPEN_BMP), instance, nullptr);
+                      185, 12, 280, 34, window, reinterpret_cast<HMENU>(static_cast<INT_PTR>(OPEN_BMP)), instance, nullptr);
         textView = CreateWindowExW(
             WS_EX_CLIENTEDGE, L"EDIT",
             L"CrashNative Inspector v0.1\r\n\r\n"
